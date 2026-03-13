@@ -3,96 +3,26 @@
 <head>
 <meta charset="UTF-8">
 <title>Server Verification</title>
-
-<style>
-
-body{
-margin:0;
-font-family:Inter,system-ui;
-background:#0f1115;
-color:#e6e6e6;
-display:flex;
-align-items:center;
-justify-content:center;
-height:100vh;
-}
-
-.card{
-background:#171a21;
-padding:40px;
-border-radius:12px;
-width:420px;
-text-align:center;
-box-shadow:0 10px 40px rgba(0,0,0,0.4);
-}
-
-h1{
-margin-top:0;
-font-size:26px;
-}
-
-.code{
-margin-top:20px;
-font-size:42px;
-letter-spacing:4px;
-background:#0f1115;
-padding:18px;
-border-radius:8px;
-}
-
-button{
-margin-top:25px;
-padding:12px 24px;
-border:none;
-border-radius:6px;
-font-size:16px;
-background:#5865F2;
-color:white;
-cursor:pointer;
-}
-
-button:hover{
-background:#4752c4;
-}
-
-</style>
+<link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
 <div class="card">
 
-<h1>Discord Verification</h1>
+<h1>Server Verification</h1>
 
-<p>Generate your verification code and send it in the verification channel.</p>
+<p>Press generate and send the code in the verify channel.</p>
 
-<button onclick="generate()">Generate Code</button>
+<button onclick="generateCode()">Generate Code</button>
 
-<div class="code" id="code">------</div>
+<div id="code" class="code">------</div>
+
+<div id="expiry"></div>
 
 </div>
 
-<script>
-
-function generate(){
-
-const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-const numbers = "0123456789";
-
-let code =
-letters[Math.floor(Math.random()*letters.length)] +
-letters[Math.floor(Math.random()*letters.length)] +
-"-" +
-numbers[Math.floor(Math.random()*numbers.length)] +
-numbers[Math.floor(Math.random()*numbers.length)] +
-numbers[Math.floor(Math.random()*numbers.length)] +
-numbers[Math.floor(Math.random()*numbers.length)];
-
-document.getElementById("code").innerText = code;
-
-}
-
-</script>
+<script src="script.js"></script>
 
 </body>
 </html>
